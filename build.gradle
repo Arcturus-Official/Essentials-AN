@@ -1,0 +1,68 @@
+group = 'net.ess3'
+version = '2.X-AN'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'forge'
+        url = 'https://files.minecraftforge.net/maven'
+    }
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'craftbukkit-repo'
+        url = 'https://dl.bintray.com/mbax/craftbukkit-repo'
+    }
+}
+
+dependencies {
+    compileOnly files('libs/BOSEconomy.jar')
+    compileOnly files('libs/bukkit.jar')
+    compileOnly files('libs/craftbukkit.jar')
+    compileOnly files('libs/iCo5.jar')
+    compileOnly files('libs/iCo6.jar')
+    compileOnly files('libs/MultiCurrency.jar')
+    compileOnly files('libs/PermissionsBukkit.jar')
+    compileOnly files('libs/PermissionsEx.jar')
+    compileOnly files('libs/Privileges.jar')
+    compileOnly files('libs/SimplyPerms.jar')
+    compileOnly files('libs/zPermissions.jar')
+    compileOnly files('libs/bPermissions-2.12-DEV.jar')
+    compileOnly files('libs/GroupManager.jar')
+    compileOnly files('libs/Vault.jar')
+
+    testImplementation 'junit:junit:4.11'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}
