@@ -1,5 +1,5 @@
 group = 'net.ess3'
-version = '2.X-AN'
+version = ''
 
 apply plugin: 'java'
 
