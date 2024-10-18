@@ -1,0 +1,4 @@
+name: untitled
+version: '${version}'
+main: net.ess3.untitled.Untitled
+load: STARTUP
